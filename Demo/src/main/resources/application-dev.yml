@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    primary: #mysql database config
+      driverClassName: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/smartinstall?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+      username: root
+      password: 1332080218
+    secondary: #oracle database config
+      driverClassName: oracle.jdbc.OracleDriver
+      url: jdbc:oracle:thin:@127.0.0.1:1521:ORCL
+      username: scott
+      password: tiger
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    mode: HTML
+    cache: false
+
+mybatis:
+  mapper-locations: classpath:mapper/mysql/*.xml, classpath:mapper/oracle/*.xml
+  config-location: classpath:config/mybatis/mybatis_config.xml
+  type-aliases-package: com.xum.demo.pojo.mysql, com.xum.demo.pojo.oracle

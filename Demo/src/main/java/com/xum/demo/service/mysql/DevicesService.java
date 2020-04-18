@@ -1,4 +1,4 @@
-package com.xum.demo.service;
+package com.xum.demo.service.mysql;
 
 import java.util.List;
 import java.util.Map;
@@ -9,9 +9,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 
-import com.xum.demo.dao.DevicesMapper;
-import com.xum.demo.pojo.Devices;
-import com.xum.demo.pojo.DevicesWithBLOBs;
+import com.xum.demo.dao.mysql.DevicesMapper;
+import com.xum.demo.pojo.mysql.Devices;
+import com.xum.demo.pojo.mysql.DevicesWithBLOBs;
 import org.springframework.transaction.annotation.Transactional;
 
 @Transactional

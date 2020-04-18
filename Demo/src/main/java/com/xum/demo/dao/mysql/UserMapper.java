@@ -1,9 +1,9 @@
-package com.xum.demo.dao;
+package com.xum.demo.dao.mysql;
 
 import java.util.List;
 import java.util.Map;
 
-import com.xum.demo.pojo.User;
+import com.xum.demo.pojo.mysql.User;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);

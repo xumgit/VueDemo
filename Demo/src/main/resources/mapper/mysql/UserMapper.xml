@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.xum.demo.dao.UserMapper" >
-  <resultMap id="BaseResultMap" type="com.xum.demo.pojo.User" >
+<mapper namespace="com.xum.demo.dao.mysql.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.xum.demo.pojo.mysql.User" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="age" property="age" jdbcType="INTEGER" />
@@ -60,13 +60,13 @@
           address ${sortAddress},
         </if>
     </trim>
-    limit #{offset,jdbcType=INTEGER},#{rowCount,jdbcType=INTEGER}
+    limit #{offSet,jdbcType=INTEGER},#{rowCount,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.xum.demo.pojo.User" useGeneratedKeys="true" keyProperty="id">
+  <insert id="insert" parameterType="com.xum.demo.pojo.mysql.User" useGeneratedKeys="true" keyProperty="id">
     insert into user (name, age,
       sex, province, email, 
       address)
@@ -74,7 +74,7 @@
       #{sex,jdbcType=CHAR}, #{province,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
       #{address,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.xum.demo.pojo.User" useGeneratedKeys="true" keyProperty="id">
+  <insert id="insertSelective" parameterType="com.xum.demo.pojo.mysql.User" useGeneratedKeys="true" keyProperty="id">
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="name != null" >
@@ -117,7 +117,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xum.demo.pojo.User" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.xum.demo.pojo.mysql.User" >
     update user
     <set >
       <if test="name != null" >
@@ -141,7 +141,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.xum.demo.pojo.User" >
+  <update id="updateByPrimaryKey" parameterType="com.xum.demo.pojo.mysql.User" >
     update user
     set name = #{name,jdbcType=VARCHAR},
       age = #{age,jdbcType=INTEGER},

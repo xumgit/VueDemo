@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.xum.demo.dao.DevicesMapper" >
+<mapper namespace="com.xum.demo.dao.mysql.DevicesMapper" >
   <resultMap id="BaseResultMap" type="Devices" >
     <id column="Id" property="id" jdbcType="VARCHAR" />
     <result column="TVName" property="tvname" jdbcType="VARCHAR" />
@@ -130,7 +130,7 @@
         	Type ${TypeSort},
       	</if>
     </trim>
-    limit #{offset,jdbcType=INTEGER},#{rowCount,jdbcType=INTEGER}
+    limit #{offSet,jdbcType=INTEGER},#{rowCount,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from devices

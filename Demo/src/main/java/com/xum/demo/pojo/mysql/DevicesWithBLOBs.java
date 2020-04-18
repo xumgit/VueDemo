@@ -1,4 +1,4 @@
-package com.xum.demo.pojo;
+package com.xum.demo.pojo.mysql;
 
 public class DevicesWithBLOBs extends Devices {
 	

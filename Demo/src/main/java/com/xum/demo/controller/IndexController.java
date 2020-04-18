@@ -1,8 +1,9 @@
 package com.xum.demo.controller;
 
-import com.xum.demo.pojo.DevicesWithBLOBs;
-import com.xum.demo.service.DevicesService;
+import com.xum.demo.pojo.mysql.DevicesWithBLOBs;
+import com.xum.demo.service.mysql.DevicesService;
 import com.xum.demo.utils.CommonUtils;
+import com.xum.demo.utils.CommonVariable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,7 +73,7 @@ public class IndexController {
                              @RequestParam(value="searchPhrase", required=false) String searchPhrase,
                              @RequestParam(value="sort[TVIPAddress]", required=false) String sortTVIPAddress) {
         Map<String, Object> mapPara;
-        mapPara = CommonUtils.generatePara(current, rowCount, searchPhrase);
+        mapPara = CommonUtils.generatePara(current, rowCount, searchPhrase, CommonVariable.MYSQL);
 
         if (sortTVIPAddress != null) {
             mapPara.put("TVIPAddressSort", sortTVIPAddress);

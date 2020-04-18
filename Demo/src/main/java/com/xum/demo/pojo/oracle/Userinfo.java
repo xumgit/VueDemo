@@ -1,7 +1,7 @@
-package com.xum.demo.pojo;
+package com.xum.demo.pojo.oracle;
 
-public class User {
-    private Integer id;
+public class Userinfo {
+    private Long id;
 
     private String name;
 
@@ -15,11 +15,11 @@ public class User {
 
     private String address;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

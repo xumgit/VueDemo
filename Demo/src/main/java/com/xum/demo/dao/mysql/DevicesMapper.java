@@ -1,10 +1,10 @@
-package com.xum.demo.dao;
+package com.xum.demo.dao.mysql;
 
 import java.util.List;
 import java.util.Map;
 
-import com.xum.demo.pojo.Devices;
-import com.xum.demo.pojo.DevicesWithBLOBs;
+import com.xum.demo.pojo.mysql.Devices;
+import com.xum.demo.pojo.mysql.DevicesWithBLOBs;
 
 public interface DevicesMapper {
     int deleteByPrimaryKey(String id);

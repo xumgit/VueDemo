@@ -1,7 +1,6 @@
 package com.xum.demo;
 
-import com.xum.demo.controller.IndexController;
-import com.xum.demo.service.DevicesService;
+import com.xum.demo.service.mysql.DevicesService;
 import org.junit.jupiter.api.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

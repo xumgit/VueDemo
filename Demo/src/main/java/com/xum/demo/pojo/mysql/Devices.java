@@ -1,4 +1,4 @@
-package com.xum.demo.pojo;
+package com.xum.demo.pojo.mysql;
 
 import org.springframework.beans.factory.annotation.Value;
 

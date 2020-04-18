@@ -37,8 +37,8 @@
 		javabean 的首字母小写的非限定类名来作为它的别名。 也可在javabean 加上注解@Alias 来自定义别名， 例如： @Alias(user) 
 		<package name="com.dy.entity"/> -->
 	<typeAliases>
-		<typeAlias alias="Devices" type="com.xum.demo.pojo.Devices" />
-        <typeAlias alias="DevicesWithBLOBs" type="com.xum.demo.pojo.DevicesWithBLOBs" />
+		<typeAlias alias="Devices" type="com.xum.demo.pojo.mysql.Devices" />
+        <typeAlias alias="DevicesWithBLOBs" type="com.xum.demo.pojo.mysql.DevicesWithBLOBs" />
 	</typeAliases>
 
     <!-- 插件配置  -->

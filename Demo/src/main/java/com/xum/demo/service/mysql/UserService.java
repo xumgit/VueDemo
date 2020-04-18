@@ -1,7 +1,7 @@
-package com.xum.demo.service;
+package com.xum.demo.service.mysql;
 
-import com.xum.demo.dao.UserMapper;
-import com.xum.demo.pojo.User;
+import com.xum.demo.dao.mysql.UserMapper;
+import com.xum.demo.pojo.mysql.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;

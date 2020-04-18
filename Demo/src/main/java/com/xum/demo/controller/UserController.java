@@ -1,8 +1,9 @@
 package com.xum.demo.controller;
 
-import com.xum.demo.pojo.User;
-import com.xum.demo.service.UserService;
+import com.xum.demo.pojo.mysql.User;
+import com.xum.demo.service.mysql.UserService;
 import com.xum.demo.utils.CommonUtils;
+import com.xum.demo.utils.CommonVariable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,7 +72,7 @@ public class UserController {
                              @RequestParam(value="sort[Email]", required=false) String sortEmail,
                              @RequestParam(value="sort[Address]", required=false) String sortAddress) {
         Map<String, Object> mapPara;
-        mapPara = CommonUtils.generatePara(current, rowCount, searchPhrase);
+        mapPara = CommonUtils.generatePara(current, rowCount, searchPhrase, CommonVariable.MYSQL);
 
         if (sortId != null) {
             mapPara.put("sortId", sortId);
