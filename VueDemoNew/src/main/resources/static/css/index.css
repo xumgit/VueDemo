@@ -1,0 +1,12 @@
+
+#main_content table {
+    margin: 0 auto;
+    border: 1px solid red;
+    border-collapse: collapse;
+}
+
+#main_content table td, #main_content table th {
+    border: 1px solid red;
+    border-collapse: collapse;
+    text-align: center;
+}

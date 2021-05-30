@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" th:src="@{/js/jquery-1.11.3.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/index.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/index.css}" />
+    <title>Export</title>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#getDevices").click(function() {
+                $.ajax({
+                    type: "post",
+                    dataTytpe: "json",
+                    url: "/excel/getDevices",
+                    success: function (data) {
+                        console.log(data);
+                    }
+                });
+            });
+
+            $("#export").click(function() {
+                window.location.href = "/excel/export";
+            }); 
+
+            $("#formUploadIframe").load(function() {
+                var text = $(this).contents().find("body").text();
+                console.log("text:" + text);
+            });          
+        });
+    </script>
+</head>
+<body>
+<button id="getDevices">获取devices信息</button> <br />
+<div>--------------------------------------------------------------</div>
+<a href="#" id="export">EasyExcel导出测试</a> <br />
+<div>--------------------------------------------------------------</div>
+<form target="formUploadIframe" class="formUpload" id="formUpload" 
+      th:action="@{/excel/upload}" method="post" enctype="multipart/form-data">
+    <p><input type="file" name="myfile"/></p>
+    <p><input type="submit" value="上传"/></p>
+</form>
+<iframe name="formUploadIframe" id="formUploadIframe" style="display:none;"></iframe>>
+</body>
+</html>
